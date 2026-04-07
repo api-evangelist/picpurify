@@ -1,9 +1,9 @@
 aid: picpurify
 name: PicPurify
 description: >-
-  Gun violence is always a hot topic. Legit or not, pictures showing someone
-  posing with a firearm or holding a knife can offend visitors, shock young
-  minds and displease advertisers. 
+  Gun violence is always a hot topic. Legit or not, pictures showing someone posing
+  with a firearm or holding a knife can offend visitors, shock young minds and displease
+  advertisers.
 type: Index
 position: Consumer
 access: 3rd-Party
@@ -19,9 +19,9 @@ apis:
   - aid: picpurify:picpurify
     name: PicPurify
     description: >-
-      Gun violence is always a hot topic. Legit or not, pictures showing someone
-      posing with a firearm or holding a knife can offend visitors, shock young
-      minds and displease advertisers. 
+      Gun violence is always a hot topic. Legit or not, pictures showing someone posing
+      with a firearm or holding a knife can offend visitors, shock young minds and
+      displease advertisers.
     humanURL: ' https://www.picpurify.com/gun-detection.html'
     tags:
       - API
