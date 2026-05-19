@@ -1,0 +1,78 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: PicPurify Image and Video Moderation API — Image Analysis
+  description: 'PicPurify Image and Video Moderation API — Image Analysis. 1 operations. Lead operation: Analyze an image.
+    Self-contained Naftiko capability covering one Picpurify business surface.'
+  tags:
+  - Picpurify
+  - Image Analysis
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    PICPURIFY_API_KEY: PICPURIFY_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: picpurify-image-analysis
+    baseUri: https://www.picpurify.com
+    description: PicPurify Image and Video Moderation API — Image Analysis business capability. Self-contained, no shared
+      references.
+    resources:
+    - name: analyse-1.1
+      path: /analyse/1.1
+      operations:
+      - name: post
+        method: POST
+        description: Analyze an image
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+  exposes:
+  - type: rest
+    namespace: picpurify-image-analysis-rest
+    port: 8080
+    description: REST adapter for PicPurify Image and Video Moderation API — Image Analysis. One Spectral-compliant resource
+      per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/analyse/1-1
+      name: analyse-1-1
+      description: REST surface for analyse-1.1.
+      operations:
+      - method: POST
+        name: post
+        description: Analyze an image
+        call: picpurify-image-analysis.post
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: picpurify-image-analysis-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for PicPurify Image and Video Moderation API — Image Analysis. One tool per consumed operation,
+      routed inline through this capability's consumes block.
+    tools:
+    - name: analyze-image
+      description: Analyze an image
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: picpurify-image-analysis.post
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
