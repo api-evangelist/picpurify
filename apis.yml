@@ -7,7 +7,7 @@ description: PicPurify provides image and video moderation services including gu
 type: Index
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
 - Image Moderation
 - Content Moderation
