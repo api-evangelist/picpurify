@@ -42,6 +42,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/picpurify-video-analysis.yaml
 common:
+- type: DomainSecurity
+  url: security/picpurify-domain-security.yml
 - type: Website
   url: https://www.picpurify.com/
 - type: Documentation
