@@ -1,0 +1,78 @@
+openapi: 3.0.3
+info:
+  title: PicPurify Image and Video Moderation Image Analysis Video Analysis API
+  description: PicPurify provides image and video moderation services including weapons (gun and knife) detection, nudity, drug, gore, hate sign, age, gender, and other content moderation tasks.
+  version: '1.1'
+  contact:
+    name: PicPurify
+    url: https://www.picpurify.com/
+servers:
+- url: https://www.picpurify.com
+tags:
+- name: Video Analysis
+  description: Submit a video (file upload or URL) for moderation/detection tasks frame by frame.
+paths:
+  /analyse_video/1.0:
+    post:
+      tags:
+      - Video Analysis
+      summary: Analyze a video
+      description: Submit a video for moderation analyzed at a configurable frame interval.
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+              - API_KEY
+              - task
+              properties:
+                API_KEY:
+                  type: string
+                task:
+                  type: string
+                file_video:
+                  type: string
+                  format: binary
+                url_video:
+                  type: string
+                  format: uri
+                frame_interval:
+                  type: number
+                  description: Analyze one frame every N seconds. Default 1.
+                  default: 1
+                reference_id:
+                  type: string
+                origin_id:
+                  type: string
+      responses:
+        '200':
+          description: Analysis result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalysisResult'
+components:
+  schemas:
+    AnalysisResult:
+      type: object
+      properties:
+        status:
+          type: string
+          description: Request status (success or failure).
+        final_decision:
+          type: string
+          enum:
+          - OK
+          - KO
+          description: OK means content is acceptable; KO means it violates the requested task.
+        confidence_score_decision:
+          type: number
+        reference_id:
+          type: string
+        origin_id:
+          type: string
+        media:
+          type: object
+          additionalProperties: true
