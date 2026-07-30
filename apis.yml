@@ -5,9 +5,21 @@ description: PicPurify provides image and video moderation services including gu
   a knife can offend visitors, shock young minds and displease advertisers - PicPurify detects these images so they can be
   filtered before publication.
 type: Index
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+  - plans
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/picpurify.png
 tags:
 - Image Moderation
 - Content Moderation
@@ -18,25 +30,38 @@ modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/picpurify/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-- aid: picpurify:picpurify
-  name: PicPurify Moderation API
-  description: PicPurify image and video moderation API supporting gun detection, knife detection, weapon moderation, porn
-    moderation, drug moderation, gore moderation, hate sign detection, money detection, age detection, gender detection, and
-    other tasks. Submit an image or video by file upload or URL, receive a moderation decision (OK/KO) along with confidence
-    scores.
+- aid: picpurify:picpurify-image-analysis-api
+  name: PicPurify Image Analysis API
+  description: Submit an image (file upload or URL) for one or more moderation/detection tasks.
   humanURL: https://www.picpurify.com/
   baseURL: https://www.picpurify.com
   tags:
-  - Image Moderation
-  - Content Moderation
-  - Weapon Detection
+  - Image Analysis
   properties:
+  - type: OpenAPI
+    url: openapi/picpurify-image-analysis-api-openapi.yml
   - type: Documentation
     url: https://www.picpurify.com/api-services.html
   - type: GunDetection
     url: https://www.picpurify.com/gun-detection.html
+  - type: X-NaftikoCapability
+    url: capabilities/picpurify-image-analysis.yaml
+  - type: X-NaftikoCapability
+    url: capabilities/picpurify-video-analysis.yaml
+- aid: picpurify:picpurify-video-analysis-api
+  name: PicPurify Video Analysis API
+  description: Submit a video (file upload or URL) for moderation/detection tasks frame by frame.
+  humanURL: https://www.picpurify.com/
+  baseURL: https://www.picpurify.com
+  tags:
+  - Video Analysis
+  properties:
   - type: OpenAPI
-    url: https://raw.githubusercontent.com/api-evangelist/picpurify/refs/heads/main/openapi/picpurify-openapi.yaml
+    url: openapi/picpurify-video-analysis-api-openapi.yml
+  - type: Documentation
+    url: https://www.picpurify.com/api-services.html
+  - type: GunDetection
+    url: https://www.picpurify.com/gun-detection.html
   - type: X-NaftikoCapability
     url: capabilities/picpurify-image-analysis.yaml
   - type: X-NaftikoCapability
