@@ -1,0 +1,16 @@
+{
+  "provider": "picpurify",
+  "sources": [
+    "picpurify-image-analysis-api-openapi.yml",
+    "picpurify-video-analysis-api-openapi.yml"
+  ],
+  "outputs": [
+    "picpurify-image-analysis-api-openapi.yml",
+    "picpurify-video-analysis-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
