@@ -44,10 +44,6 @@ apis:
     url: https://www.picpurify.com/api-services.html
   - type: GunDetection
     url: https://www.picpurify.com/gun-detection.html
-  - type: X-NaftikoCapability
-    url: capabilities/picpurify-image-analysis.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/picpurify-video-analysis.yaml
 - aid: picpurify:picpurify-video-analysis-api
   name: PicPurify Video Analysis API
   description: Submit a video (file upload or URL) for moderation/detection tasks frame by frame.
@@ -62,10 +58,6 @@ apis:
     url: https://www.picpurify.com/api-services.html
   - type: GunDetection
     url: https://www.picpurify.com/gun-detection.html
-  - type: X-NaftikoCapability
-    url: capabilities/picpurify-image-analysis.yaml
-  - type: X-NaftikoCapability
-    url: capabilities/picpurify-video-analysis.yaml
 common:
 - type: AgenticAccess
   url: agentic-access/picpurify-agentic-access.yml
