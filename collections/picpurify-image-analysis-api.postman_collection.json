@@ -1,0 +1,206 @@
+{
+  "item": [
+    {
+      "id": "01eb6ae6-1be2-40f1-a3f3-d9b858302d5e",
+      "name": "Image Analysis",
+      "description": {
+        "content": "Submit an image (file upload or URL) for one or more moderation/detection tasks.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6e5ad784-2a3b-4757-a055-9ca8c6899444",
+          "name": "Analyze an image",
+          "request": {
+            "name": "Analyze an image",
+            "description": {
+              "content": "Submit an image for moderation. Supports tasks such as gun_detection, knife_detection, weapon_moderation, porn_moderation, drug_moderation, gore_moderation, hate_sign_detection, money_detection, age_detection, gender_detection, and more.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "analyse",
+                "1.1"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "API_KEY",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) Your PicPurify API key."
+                },
+                {
+                  "key": "task",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) One or more comma-separated moderation/detection tasks (e.g. \"weapon_moderation,porn_moderation\")."
+                },
+                {
+                  "key": "file_image",
+                  "type": "file",
+                  "description": "Binary image file. Use this OR url_image."
+                },
+                {
+                  "key": "url_image",
+                  "value": "<uri>",
+                  "type": "text",
+                  "description": "Public URL of the image to analyze. Use this OR file_image."
+                },
+                {
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "Optional unique identifier returned in the response."
+                },
+                {
+                  "key": "origin_id",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "Optional caller-supplied origin identifier."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "8088f7ee-b99d-4e00-b14a-2d12e28d7394",
+              "name": "Analysis result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "analyse",
+                    "1.1"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) Your PicPurify API key.",
+                        "type": "text/plain"
+                      },
+                      "key": "API_KEY",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) One or more comma-separated moderation/detection tasks (e.g. \"weapon_moderation,porn_moderation\").",
+                        "type": "text/plain"
+                      },
+                      "key": "task",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Binary image file. Use this OR url_image.",
+                        "type": "text/plain"
+                      },
+                      "key": "file_image",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Public URL of the image to analyze. Use this OR file_image.",
+                        "type": "text/plain"
+                      },
+                      "key": "url_image",
+                      "value": "<uri>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Optional unique identifier returned in the response.",
+                        "type": "text/plain"
+                      },
+                      "key": "reference_id",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Optional caller-supplied origin identifier.",
+                        "type": "text/plain"
+                      },
+                      "key": "origin_id",
+                      "value": "<string>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\",\n  \"final_decision\": \"OK\",\n  \"confidence_score_decision\": 5233.824091961095,\n  \"reference_id\": \"string\",\n  \"origin_id\": \"string\",\n  \"media\": {\n    \"key_0\": false\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.picpurify.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "1984d25f-e3f0-446f-b168-b64e6e3b3d24",
+    "name": "PicPurify Image and Video Moderation Image Analysis API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "PicPurify provides image and video moderation services including weapons (gun and knife) detection, nudity, drug, gore, hate sign, age, gender, and other content moderation tasks.\n\nContact Support:\n Name: PicPurify",
+      "type": "text/plain"
+    }
+  }
+}

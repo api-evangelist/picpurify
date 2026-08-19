@@ -1,0 +1,221 @@
+{
+  "item": [
+    {
+      "id": "0fd318b8-faea-47c3-a1dd-3301dfb542d9",
+      "name": "Video Analysis",
+      "description": {
+        "content": "Submit a video (file upload or URL) for moderation/detection tasks frame by frame.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "431399f0-9298-4ae3-9a13-6d5dadad4bd7",
+          "name": "Analyze a video",
+          "request": {
+            "name": "Analyze a video",
+            "description": {
+              "content": "Submit a video for moderation analyzed at a configurable frame interval.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "analyse_video",
+                "1.0"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "multipart/form-data"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "API_KEY",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) "
+                },
+                {
+                  "key": "task",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": "(Required) "
+                },
+                {
+                  "key": "file_video",
+                  "type": "file",
+                  "description": ""
+                },
+                {
+                  "key": "url_video",
+                  "value": "<uri>",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "frame_interval",
+                  "value": "1",
+                  "type": "text",
+                  "description": "Analyze one frame every N seconds. Default 1."
+                },
+                {
+                  "key": "reference_id",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": ""
+                },
+                {
+                  "key": "origin_id",
+                  "value": "<string>",
+                  "type": "text",
+                  "description": ""
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "02656a12-feb8-4c31-8213-5bcb22e311b7",
+              "name": "Analysis result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "analyse_video",
+                    "1.0"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "API_KEY",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "(Required) ",
+                        "type": "text/plain"
+                      },
+                      "key": "task",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "file_video",
+                      "value": "<binary>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "url_video",
+                      "value": "<uri>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "Analyze one frame every N seconds. Default 1.",
+                        "type": "text/plain"
+                      },
+                      "key": "frame_interval",
+                      "value": "1",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "reference_id",
+                      "value": "<string>",
+                      "type": "text"
+                    },
+                    {
+                      "description": {
+                        "content": "",
+                        "type": "text/plain"
+                      },
+                      "key": "origin_id",
+                      "value": "<string>",
+                      "type": "text"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"status\": \"string\",\n  \"final_decision\": \"KO\",\n  \"confidence_score_decision\": 627.5010804514702,\n  \"reference_id\": \"string\",\n  \"origin_id\": \"string\",\n  \"media\": {\n    \"key_0\": \"string\",\n    \"key_1\": false,\n    \"key_2\": 6282\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://www.picpurify.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "a704d2d7-262f-4351-95f3-7e0a296ba4ff",
+    "name": "PicPurify Image and Video Moderation Image Analysis Video Analysis API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "PicPurify provides image and video moderation services including weapons (gun and knife) detection, nudity, drug, gore, hate sign, age, gender, and other content moderation tasks.\n\nContact Support:\n Name: PicPurify",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "PicPurify Image and Video Moderation Image Analysis API",
+    "version": "1.1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Image Analysis",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Analyze an image",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://www.picpurify.com/analyse/1.1",
+            "body": {
+              "type": "multipart-form",
+              "data": [
+                {
+                  "name": "API_KEY",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "task",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "file_image",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "url_image",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "reference_id",
+                  "type": "text",
+                  "value": ""
+                },
+                {
+                  "name": "origin_id",
+                  "type": "text",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "docs": "Submit an image for moderation. Supports tasks such as gun_detection, knife_detection, weapon_moderation, porn_moderation, drug_moderation, gore_moderation, hate_sign_detection, money_detection, age_detection, gender_detection, and more."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
