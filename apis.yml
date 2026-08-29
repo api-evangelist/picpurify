@@ -5,6 +5,18 @@ description: PicPurify provides image and video moderation services including gu
   a knife can offend visitors, shock young minds and displease advertisers - PicPurify detects these images so they can be
   filtered before publication.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: unknown
