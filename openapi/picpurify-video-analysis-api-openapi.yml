@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: PicPurify Image and Video Moderation Image Analysis Video Analysis API
+  title: PicPurify Image and Video Moderation Video Analysis API
   description: PicPurify provides image and video moderation services including weapons (gun and knife) detection, nudity, drug, gore, hate sign, age, gender, and other content moderation tasks.
   version: '1.1'
   contact:
@@ -53,6 +53,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/AnalysisResult'
+      operationId: postAnalyseVideo10
+      x-operation-id-source: derived
 components:
   schemas:
     AnalysisResult:
