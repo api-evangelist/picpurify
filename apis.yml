@@ -35,13 +35,14 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/picpurify.
 tags:
 - Image Moderation
 - Content Moderation
-- Computer-Vision
+- Computer Vision
 - Weapon Detection
 tags_raw:
 - Image Moderation
 - Content Moderation
 - Computer Vision
 - Weapon Detection
+- Computer-Vision
 created: '2025-02-17'
 modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/picpurify/refs/heads/main/apis.yml
@@ -51,7 +52,6 @@ apis:
   name: PicPurify Image Analysis API
   description: Submit an image (file upload or URL) for one or more moderation/detection tasks.
   humanURL: https://www.picpurify.com/
-  baseURL: https://www.picpurify.com
   tags:
   - Image Analysis
   properties:
@@ -65,7 +65,6 @@ apis:
   name: PicPurify Video Analysis API
   description: Submit a video (file upload or URL) for moderation/detection tasks frame by frame.
   humanURL: https://www.picpurify.com/
-  baseURL: https://www.picpurify.com
   tags:
   - Video Analysis
   properties:
