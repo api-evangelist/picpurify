@@ -75,6 +75,12 @@ apis:
   - type: GunDetection
     url: https://www.picpurify.com/gun-detection.html
 common:
+- type: Plans
+  url: plans/picpurify-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/picpurify-rate-limits.yml
+- type: FinOps
+  url: finops/picpurify-finops.yml
 - type: AgenticAccess
   url: agentic-access/picpurify-agentic-access.yml
 - type: DomainSecurity
